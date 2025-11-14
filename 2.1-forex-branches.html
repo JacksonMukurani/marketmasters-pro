@@ -12,74 +12,166 @@
             <div class="nav-brand">
                 <h1><a href="index.html">MarketMasters Pro</a></h1>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="chapter2-toc.html">Chapter 2</a></li>
-                <li><a href="#tools">Tools</a></li>
-                <button class="cta-button">Get Started</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#articles">Articles</a></li>
+                <li><a href="index.html#chapters">Chapters</a></li>
+                <li><a href="index.html#tools">Tools</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <button class="cta-button" onclick="location.href='index.html#chapters'">Get Started</button>
             </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <article class="article-content">
         <div class="container">
             <div class="article-header">
-                <span class="article-category">Chapter 2.1</span>
-                <h1>Forex Market Branches: Spot, Forward, Futures, Options, Swaps</h1>
+                <h1>Forex Market Branches</h1>
+                <p class="article-subtitle">Spot, Forward, Futures, Options, and Swaps - understanding each instrument's unique characteristics and use cases for various trading objectives.</p>
                 <div class="article-meta">
                     <span class="read-time">10 min read</span>
                     <span class="difficulty">Intermediate</span>
-                    <span class="publish-date">Updated: January 2024</span>
+                    <span class="publish-date">Market Instruments</span>
                 </div>
             </div>
 
             <div class="article-body">
-                <p class="article-intro">The Forex market encompasses several distinct but interconnected branches, each serving different purposes and catering to various trading objectives. Understanding these branches is essential because they represent different ways to gain exposure to currency movements.</p>
+                <div class="key-takeaway">
+                    <h4>📚 Key Takeaway</h4>
+                    <p>The Forex market encompasses several distinct branches - spot, forwards, futures, options, and swaps - each serving different purposes with unique characteristics and risk profiles. Understanding these differences allows traders to select appropriate instruments.</p>
+                </div>
 
-                <h2>Spot Forex Market</h2>
-                <p>This is the most familiar branch for retail traders, where currencies are traded for immediate delivery at the current market price. When you buy EUR/USD in a spot transaction, you're essentially exchanging one currency for another at the prevailing exchange rate.</p>
+                <h2>💱 Spot Forex Market</h2>
+                <p>This is the most familiar branch for retail traders, where currencies are traded for immediate delivery at the current market price. When you buy EUR/USD in a spot transaction, you're essentially exchanging one currency for another at the prevailing exchange rate, with settlement typically occurring within two business days (T+2).</p>
 
                 <div class="info-box">
-                    <h4>Key Characteristics:</h4>
+                    <h4>🎯 Spot Market Characteristics</h4>
                     <ul>
                         <li><strong>Settlement:</strong> T+2 (trade date plus two business days)</li>
-                        <li><strong>Liquidity:</strong> Very high</li>
-                        <li><strong>Price Measurement:</strong> Pips (0.0001 for most pairs)</li>
-                        <li><strong>Trading Hours:</strong> 24/5</li>
+                        <li><strong>Liquidity:</strong> Very high with 24-hour trading across global sessions</li>
+                        <li><strong>Price Measurement:</strong> Pips (0.0001 for most pairs, 0.01 for JPY pairs)</li>
+                        <li><strong>Typical Users:</strong> Retail traders, corporations for immediate currency needs</li>
+                        <li><strong>Execution:</strong> Instant at current market prices with minimal slippage</li>
                     </ul>
                 </div>
 
-                <!-- Interactive Forex Instrument Comparison -->
-                <div class="interactive-comparison">
-                    <h3>Forex Instruments Comparison</h3>
-                    <div class="comparison-grid">
-                        <div class="comparison-item active" data-instrument="spot">
-                            <h4>Spot Forex</h4>
-                            <p>Immediate execution</p>
-                        </div>
-                        <div class="comparison-item" data-instrument="forward">
-                            <h4>Forward Contracts</h4>
-                            <p>Custom future dates</p>
-                        </div>
-                        <div class="comparison-item" data-instrument="futures">
-                            <h4>Futures</h4>
-                            <p>Standardized exchanges</p>
-                        </div>
-                        <div class="comparison-item" data-instrument="options">
-                            <h4>Options</h4>
-                            <p>Right but not obligation</p>
-                        </div>
+                <h2>📅 Forward Contracts</h2>
+                <p>These are customized agreements between two parties to exchange currencies at a predetermined price on a specific future date. Unlike spot transactions, forwards are traded over-the-counter (OTC) and are not standardized.</p>
+
+                <div class="info-box">
+                    <h4>🏢 Forward Market Usage</h4>
+                    <ul>
+                        <li><strong>Hedging:</strong> Corporations lock in future exchange rates for known payments</li>
+                        <li><strong>Customization:</strong> Tailored dates, amounts, and settlement terms</li>
+                        <li><strong>OTC Trading:</strong> Direct between parties without exchange intermediation</li>
+                        <li><strong>Credit Risk:</strong> Counterparty risk exists since no central clearing</li>
+                        <li><strong>Example:</strong> US company locking in EUR/USD rate for €1M supplier payment in 3 months</li>
+                    </ul>
+                </div>
+
+                <h2>⚖️ Futures Contracts</h2>
+                <p>Similar to forwards but standardized and traded on regulated exchanges like the Chicago Mercantile Exchange (CME). Currency futures have fixed contract sizes, expiration dates, and centralized clearing that eliminates counterparty risk.</p>
+
+                <div class="stat-box">
+                    <h4>📊 Futures Specifications</h4>
+                    <p>Standard contract sizes: <strong>€125,000</strong> for EUR futures, <strong>£62,500</strong> for GBP futures, <strong>¥12,500,000</strong> for JPY futures. Price movements measured in <strong>ticks</strong> with each tick typically worth $12.50. Quarterly expiration cycles (March, June, September, December).</p>
+                </div>
+
+                <div class="function-grid">
+                    <div class="function-card">
+                        <h4>✅ Futures Advantages</h4>
+                        <p>No counterparty risk, high liquidity, price transparency, regulatory oversight, accessible to retail traders</p>
                     </div>
-                    <div class="comparison-details">
-                        <!-- Details populated by JavaScript -->
+                    
+                    <div class="function-card">
+                        <h4>❌ Futures Disadvantages</h4>
+                        <p>Lack of customization, fixed contract sizes, margin requirements, limited currency pairs available</p>
                     </div>
                 </div>
 
-                <!-- Continue with full article content... -->
+                <div class="quote-box">
+                    <p>"Options are like insurance."</p>
+                    <cite>– Nassim Nicholas Taleb</cite>
+                </div>
+
+                <h2>🎫 Options Contracts</h2>
+                <p>These provide the right, but not the obligation, to buy (call option) or sell (put option) a currency pair at a specific price (strike price) on or before a certain date. Options are priced based on the underlying currency pair's volatility, time to expiration, and the difference between the strike price and current market price.</p>
+
+                <div class="function-grid">
+                    <div class="function-card">
+                        <h4>📈 Call Options</h4>
+                        <p>Right to buy at strike price - used when expecting currency appreciation. Premium paid for upside potential with limited downside risk.</p>
+                    </div>
+                    
+                    <div class="function-card">
+                        <h4>📉 Put Options</h4>
+                        <p>Right to sell at strike price - used when expecting currency depreciation. Premium paid for downside protection with limited risk.</p>
+                    </div>
+                    
+                    <div class="function-card">
+                        <h4>💰 Premium Pricing</h4>
+                        <p>Options priced based on volatility (vega), time to expiration (theta), strike vs market price (delta), and interest rates (rho)</p>
+                    </div>
+                </div>
+
+                <h2>🔄 Currency Swaps</h2>
+                <p>These involve two parties exchanging principal and interest payments in different currencies for a specified period. Swaps are primarily used by institutions to manage long-term currency exposure and interest rate risk. For example, a company might swap fixed-rate dollar debt for fixed-rate euro debt to match their revenue streams.</p>
+
+                <div class="info-box">
+                    <h4>🏛️ Swap Market Participants</h4>
+                    <ul>
+                        <li><strong>Multinational Corporations:</strong> Managing foreign currency cash flows</li>
+                        <li><strong>Financial Institutions:</strong> Hedging balance sheet exposures</li>
+                        <li><strong>Governments & Sovereigns:</strong> Managing foreign debt obligations</li>
+                        <li><strong>Investment Funds:</strong> Accessing foreign markets with hedged exposure</li>
+                    </ul>
+                </div>
+
+                <h2>🎯 Choosing the Right Instrument</h2>
+                <p>Each branch serves distinct purposes: spot for immediate transactions and short-term speculation, forwards and futures for hedging future exposures, options for flexible risk management, and swaps for long-term currency and interest rate management.</p>
+
+                <div class="function-grid">
+                    <div class="function-card">
+                        <h4>🔄 Spot Forex</h4>
+                        <p><strong>Best for:</strong> Day trading, short-term speculation, immediate currency needs<br>
+                        <strong>Consider:</strong> Spread costs, overnight financing, immediate execution</p>
+                    </div>
+                    
+                    <div class="function-card">
+                        <h4>⏰ Forwards/Futures</h4>
+                        <p><strong>Best for:</strong> Hedging known future exposures, directional bets with leverage<br>
+                        <strong>Consider:</strong> Contract standardization, margin requirements, expiration dates</p>
+                    </div>
+                    
+                    <div class="function-card">
+                        <h4>🛡️ Options</h4>
+                        <p><strong>Best for:</strong> Defined-risk strategies, volatility trading, portfolio protection<br>
+                        <strong>Consider:</strong> Time decay, complexity, premium costs</p>
+                    </div>
+                </div>
+
+                <div class="action-box">
+                    <h4>✅ Continue Your Market Education</h4>
+                    <p>Now that you understand Forex market branches, explore how these instruments fit into the broader market structure and interbank ecosystem.</p>
+                    <div class="action-buttons">
+                        <a href="1.1-financial-markets.html" class="btn-secondary">← Previous: Market Foundations</a>
+                        <a href="index.html" class="btn-primary">🏠 Back to Home</a>
+                        <a href="3.3-chart-types.html" class="btn-secondary">Next: Chart Types →</a>
+                    </div>
+                </div>
+
+                <div class="article-footer">
+                    <h4>💡 Professional Insight</h4>
+                    <p><strong>"Hedge your risks."</strong> Understanding different Forex instruments allows sophisticated risk management beyond simple directional betting. Professional traders use multiple instruments to create balanced, risk-controlled strategies.</p>
+                </div>
             </div>
         </div>
     </article>
 
-    <script src="chapter2-script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
