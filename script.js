@@ -1,43 +1,42 @@
-// Mobile Menu Toggle
+// Mobile Menu Toggle - FIXED
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.getElementById('navLinks');
     
+    // Mobile menu toggle
     if (mobileMenu && navLinks) {
         mobileMenu.addEventListener('click', function() {
-            const isDisplayed = navLinks.style.display === 'flex';
-            navLinks.style.display = isDisplayed ? 'none' : 'flex';
-            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('mobile-visible');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.nav') && navLinks.classList.contains('mobile-visible')) {
+                navLinks.classList.remove('mobile-visible');
+            }
         });
     }
 
-    // Accordion Functionality
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', function() {
-            const accordionItem = this.parentElement;
-            const accordionContent = this.nextElementSibling;
+    // Position Size Calculator
+    const calculateButton = document.getElementById('calculate-position');
+    if (calculateButton) {
+        calculateButton.addEventListener('click', function() {
+            const accountEquity = parseFloat(document.getElementById('account-equity').value) || 10000;
+            const riskPercent = parseFloat(document.getElementById('risk-percent').value) || 1;
+            const positionResult = document.getElementById('position-result');
             
-            // Close all other accordion items
-            document.querySelectorAll('.accordion-item').forEach(item => {
-                if (item !== accordionItem) {
-                    item.classList.remove('active');
-                    if (item.querySelector('.accordion-content')) {
-                        item.querySelector('.accordion-content').style.maxHeight = '0';
-                    }
-                }
-            });
+            const riskAmount = accountEquity * (riskPercent / 100);
+            const recommendedPosition = riskAmount * 10;
             
-            // Toggle current item
-            accordionItem.classList.toggle('active');
-            if (accordionItem.classList.contains('active')) {
-                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-            } else {
-                accordionContent.style.maxHeight = '0';
+            if (positionResult) {
+                positionResult.innerHTML = `
+                    <strong>Recommended Position:</strong><br>
+                    $${recommendedPosition.toFixed(2)}<br>
+                    <small>Risking $${riskAmount.toFixed(2)} (${riskPercent}% of equity)</small>
+                `;
             }
         });
-    });
+    }
 
     // Market Time Converter
     const convertButton = document.getElementById('convert-time');
@@ -57,61 +56,38 @@ document.addEventListener('DOMContentLoaded', function() {
             if (timeResult) {
                 timeResult.innerHTML = `
                     <strong>${sessionTimes[selectedSession]}</strong><br>
-                    Your local time: ${userTime}<br>
-                    <small>Use our advanced converter for precise calculations</small>
+                    Your local time: ${userTime}
                 `;
             }
         });
     }
 
-    // Position Size Calculator
-    const calculateButton = document.getElementById('calculate-position');
-    if (calculateButton) {
-        calculateButton.addEventListener('click', function() {
-            const accountEquity = parseFloat(document.getElementById('account-equity').value);
-            const riskPercent = parseFloat(document.getElementById('risk-percent').value);
-            const positionResult = document.getElementById('position-result');
+    // Pip Value Calculator
+    const pipButton = document.getElementById('calculate-pip');
+    if (pipButton) {
+        pipButton.addEventListener('click', function() {
+            const currencyPair = document.getElementById('currency-pair').value;
+            const lotSize = parseFloat(document.getElementById('lot-size').value) || 1;
+            const pipResult = document.getElementById('pip-result');
             
-            if (!accountEquity || !riskPercent) {
-                if (positionResult) {
-                    positionResult.innerHTML = '<span style="color: var(--danger)">Please enter both values</span>';
-                }
-                return;
-            }
+            const pipValues = {
+                'EUR/USD': 10,
+                'GBP/USD': 10,
+                'USD/JPY': 9.09,
+                'AUD/USD': 10
+            };
             
-            const riskAmount = accountEquity * (riskPercent / 100);
-            const recommendedPosition = riskAmount * 10; // Simplified calculation
+            const pipValue = pipValues[currencyPair] * lotSize;
             
-            if (positionResult) {
-                positionResult.innerHTML = `
-                    <strong>Recommended Position Size:</strong><br>
-                    $${recommendedPosition.toFixed(2)}<br>
-                    <small>Risking $${riskAmount.toFixed(2)} (${riskPercent}% of equity)</small>
+            if (pipResult) {
+                pipResult.innerHTML = `
+                    <strong>Pip Value:</strong><br>
+                    $${pipValue.toFixed(2)} per pip<br>
+                    <small>For ${currencyPair}, ${lotSize} lot(s)</small>
                 `;
             }
         });
     }
-
-    // Article Card Interactions
-    const articleCards = document.querySelectorAll('.article-card');
-    articleCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            if (!e.target.classList.contains('read-more')) {
-                const articleId = this.getAttribute('data-article');
-                // In a real implementation, this would load the full article
-                alert(`Loading article ${articleId}: ${this.querySelector('h3').textContent}`);
-            }
-        });
-        
-        const readMoreBtn = card.querySelector('.read-more');
-        if (readMoreBtn) {
-            readMoreBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const articleId = card.getAttribute('data-article');
-                alert(`Loading full article: ${card.querySelector('h3').textContent}`);
-            });
-        }
-    });
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -142,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Ad placement management
+// Ad rotation
 class AdManager {
     constructor() {
         this.adContainers = document.querySelectorAll('.ad-container');
@@ -151,12 +127,11 @@ class AdManager {
     
     init() {
         this.rotateAds();
-        setInterval(() => this.rotateAds(), 30000); // Rotate ads every 30 seconds
+        setInterval(() => this.rotateAds(), 30000);
     }
     
     rotateAds() {
         this.adContainers.forEach(container => {
-            // Simulate ad rotation - in real implementation, this would fetch from ad server
             const adTypes = ['Trading Platform', 'Market Data', 'Educational Course', 'Broker Service'];
             const randomAd = adTypes[Math.floor(Math.random() * adTypes.length)];
             const placeholder = container.querySelector('.ad-placeholder');
@@ -167,17 +142,6 @@ class AdManager {
     }
 }
 
-// Initialize ad manager when page loads
 window.addEventListener('load', () => {
     new AdManager();
 });
-
-// Article loading function
-function loadArticle(articleUrl) {
-    // In a real implementation, this would load the article content
-    // For demo purposes, we'll show an alert
-    alert(`Loading article: ${articleUrl}\n\nIn the full implementation, this would navigate to the complete article page with detailed content, interactive examples, and practice exercises.`);
-    
-    // Alternatively, you could use:
-    // window.location.href = articleUrl;
-}
