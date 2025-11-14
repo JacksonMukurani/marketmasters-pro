@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
             
             // Update info panel
-            tierTitle.textContent = data.title;
-            tierDescription.textContent = data.description;
+            if (tierTitle) tierTitle.textContent = data.title;
+            if (tierDescription) tierDescription.textContent = data.description;
         });
     });
 
@@ -91,10 +91,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const regionFilter = document.getElementById('region-filter');
     const accountTypeFilter = document.getElementById('account-type-filter');
     const compareButton = document.getElementById('compare-brokers');
-    const brokerTable = document.getElementById('broker-table').querySelector('tbody');
+    const brokerTable = document.getElementById('broker-table');
 
     function populateBrokerTable(brokers) {
-        brokerTable.innerHTML = '';
+        if (!brokerTable) return;
+        
+        const tbody = brokerTable.querySelector('tbody');
+        if (!tbody) return;
+        
+        tbody.innerHTML = '';
         brokers.forEach(broker => {
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -104,13 +109,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td>${broker.spreads}</td>
                 <td><span style="color: var(--primary-orange)">${broker.rating}</span></td>
             `;
-            brokerTable.appendChild(row);
+            tbody.appendChild(row);
         });
     }
 
     function filterBrokers() {
-        const region = regionFilter.value;
-        const accountType = accountTypeFilter.value;
+        const region = regionFilter ? regionFilter.value : 'all';
+        const accountType = accountTypeFilter ? accountTypeFilter.value : 'all';
         
         let filteredBrokers = brokerData.filter(broker => {
             const regionMatch = region === 'all' || broker.region === region;
@@ -121,7 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
         populateBrokerTable(filteredBrokers);
     }
 
-    compareButton.addEventListener('click', filterBrokers);
+    if (compareButton) {
+        compareButton.addEventListener('click', filterBrokers);
+    }
     
     // Initial population
     populateBrokerTable(brokerData);
@@ -200,20 +207,26 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
-        document.getElementById('calculate-instrument').addEventListener('click', function() {
-            const instrument = document.getElementById('instrument-type').value;
-            const lotSize = parseFloat(document.getElementById('lot-size').value);
-            const price = parseFloat(document.getElementById('price-level').value);
-            
-            const pipValue = forexCalculator.calculatePipValue(lotSize, instrument);
-            const positionValue = forexCalculator.calculatePositionValue(price, lotSize, instrument);
-            
-            document.getElementById('instrument-result').innerHTML = `
-                <strong>Results for ${instrument.toUpperCase()}:</strong><br>
-                Pip Value: $${pipValue.toFixed(2)}<br>
-                Position Value: $${positionValue.toFixed(2)}
-            `;
-        });
+        const calculateInstrumentBtn = document.getElementById('calculate-instrument');
+        if (calculateInstrumentBtn) {
+            calculateInstrumentBtn.addEventListener('click', function() {
+                const instrument = document.getElementById('instrument-type').value;
+                const lotSize = parseFloat(document.getElementById('lot-size').value) || 1;
+                const price = parseFloat(document.getElementById('price-level').value) || 1.1000;
+                const instrumentResult = document.getElementById('instrument-result');
+                
+                const pipValue = forexCalculator.calculatePipValue(lotSize, instrument);
+                const positionValue = forexCalculator.calculatePositionValue(price, lotSize, instrument);
+                
+                if (instrumentResult) {
+                    instrumentResult.innerHTML = `
+                        <strong>Results for ${instrument.toUpperCase()}:</strong><br>
+                        Pip Value: $${pipValue.toFixed(2)}<br>
+                        Position Value: $${positionValue.toFixed(2)}
+                    `;
+                }
+            });
+        }
     }
 
     // Regulatory Comparison Chart
@@ -253,17 +266,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     createRegulatoryChart();
 
-    // Mobile menu functionality (if not already in main script)
+    // Mobile menu functionality for chapter pages
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     
     if (mobileMenu && navLinks) {
         mobileMenu.addEventListener('click', function() {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            const isDisplayed = navLinks.style.display === 'flex';
+            navLinks.style.display = isDisplayed ? 'none' : 'flex';
         });
     }
 
-    // Smooth scrolling for anchor links
+    // Smooth scrolling for anchor links in chapter pages
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -277,16 +291,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-// Article loading function
-function loadArticle(articleUrl) {
-    // In a real implementation, this would load the article content
-    // For demo purposes, we'll show an alert
-    alert(`Loading article: ${articleUrl}\n\nIn the full implementation, this would navigate to the complete article page with detailed content, interactive examples, and practice exercises.`);
-    
-    // Alternatively, you could use:
-    // window.location.href = articleUrl;
-}
 
 // Export functions for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
