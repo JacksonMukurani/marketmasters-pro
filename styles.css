@@ -908,3 +908,42 @@ select:focus, input:focus {
         padding: 1rem;
     }
 }
+/* Mobile Navigation Scroll Fix */
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        padding-bottom: 10px;
+    }
+    
+    .nav-links::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+    
+    .nav-links li {
+        display: inline-block;
+        flex-shrink: 0;
+    }
+    
+    .nav-links .cta-button {
+        flex-shrink: 0;
+        margin-left: 1rem;
+    }
+    
+    /* Hide mobile menu when nav is scrollable */
+    .mobile-menu {
+        display: none;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 1rem;
+        padding: 0 1rem 10px;
+    }
+}
