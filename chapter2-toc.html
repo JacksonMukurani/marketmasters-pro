@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Instruments & Structure | MarketMasters Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header (same as main site) -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1><a href="index.html">MarketMasters Pro</a></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chapter1-toc.html">Chapter 1</a></li>
+                <li><a href="chapter2-toc.html" class="active">Chapter 2</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <button class="cta-button">Get Started</button>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Chapter Hero -->
+    <section class="chapter-hero">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-badge">Chapter 2</span>
+                <h1>Market Instruments and Structure</h1>
+                <p class="epigraph">"Provide learners with knowledge of various market instruments and their underlying structures, enabling them to understand how different assets behave and interact within the market ecosystem."</p>
+                <p class="learning-objectives">
+                    Master Forex branches, differentiate instruments, understand market structures, and choose the right brokers for your trading objectives.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section class="progress-tracker">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 33%"></div>
+            </div>
+            <div class="progress-text">
+                <span>Chapter 2 of 6</span>
+                <span>33% Complete</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Placement -->
+    <div class="ad-container leaderboard-ad">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder">Trading Platform Ad</div>
+    </div>
+
+    <!-- Articles Grid -->
+    <section class="articles-section">
+        <div class="container">
+            <h2>Chapter 2 Articles</h2>
+            <div class="articles-grid">
+                <!-- Article 2.1 -->
+                <article class="article-card" data-article="2.1">
+                    <div class="article-badge">Essential</div>
+                    <h3>Forex Market Branches</h3>
+                    <p>Spot, Forward, Futures, Options, and Swaps - understand each instrument's unique characteristics and use cases.</p>
+                    <div class="article-meta">
+                        <span class="read-time">10 min read</span>
+                        <span class="difficulty">Intermediate</span>
+                    </div>
+                    <button class="read-more" onclick="loadArticle('2.1-forex-branches.html')">Read Article</button>
+                </article>
+
+                <!-- Article 2.2 -->
+                <article class="article-card" data-article="2.2">
+                    <h3>Interbank Market & Liquidity</h3>
+                    <p>Discover the wholesale level of Forex where large institutions trade and how liquidity flows through the ecosystem.</p>
+                    <div class="article-meta">
+                        <span class="read-time">8 min read</span>
+                        <span class="difficulty">Intermediate</span>
+                    </div>
+                    <button class="read-more" onclick="loadArticle('2.2-interbank-market.html')">Read Article</button>
+                </article>
+
+                <!-- Article 2.3 -->
+                <article class="article-card" data-article="2.3">
+                    <h3>Retail vs Institutional Forex</h3>
+                    <p>Key differences in access, execution, costs, and market influence between retail and institutional trading.</p>
+                    <div class="article-meta">
+                        <span class="read-time">9 min read</span>
+                        <span class="difficulty">Beginner</span>
+                    </div>
+                    <button class="read-more" onclick="loadArticle('2.3-retail-institutional.html')">Read Article</button>
+                </article>
+
+                <!-- Ad Placement -->
+                <div class="ad-container rectangle-ad">
+                    <div class="ad-label">Sponsored</div>
+                    <div class="ad-placeholder">Broker Comparison</div>
+                </div>
+
+                <!-- Article 2.4 -->
+                <article class="article-card" data-article="2.4">
+                    <h3>Stocks vs Bonds: Ownership vs Debt</h3>
+                    <p>Fundamental differences between equity and fixed income instruments, their structures, and risk profiles.</p>
+                    <div class="article-meta">
+                        <span class="read-time">11 min read</span>
+                        <span class="difficulty">Beginner</span>
+                    </div>
+                    <button class="read-more" onclick="loadArticle('2.4-stocks-bonds.html')">Read Article</button>
+                </article>
+
+                <!-- Article 2.5 -->
+                <article class="article-card" data-article="2.5">
+                    <h3>Commodities & Energy Markets</h3>
+                    <p>Hard and soft commodities, energy products, and their unique trading characteristics and seasonality.</p>
+                    <div class="article-meta">
+                        <span class="read-time">12 min read</span>
+                        <span class="difficulty">Intermediate</span>
+                    </div>
+                    <button class="read-more" onclick="loadArticle('2.5-commodities-energy.html')">Read Article</button>
+                </article>
+
+                <!-- Article 2.6 -->
+                <article class="article-card" data-article="2.6">
+                    <div class="article-badge">Advanced</div>
+                    <h3>Cryptocurrency & Blockchain</h3>
+                    <p>Emerging digital asset class, blockchain technology, and the infrastructure powering crypto markets.</p>
+                    <div class="article-meta">
+                        <span class="read-time">14 min read</span>
+                        <span class="difficulty">Advanced</span>
+                    </div>
+                    <button class="read-more" onclick="loadArticle('2.6-cryptocurrency-blockchain.html')">Read Article</button>
+                </article>
+
+                <!-- Continue with remaining articles... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Market Structure Visual -->
+    <section class="interactive-visual">
+        <div class="container">
+            <h2>Market Structure Interactive</h2>
+            <div class="visual-container">
+                <div class="market-tiers">
+                    <div class="tier tier-1" data-tier="1">
+                        <h4>Tier 1: Interbank Market</h4>
+                        <p>Major Banks & Institutions</p>
+                    </div>
+                    <div class="tier-arrow">↓</div>
+                    <div class="tier tier-2" data-tier="2">
+                        <h4>Tier 2: Smaller Banks</h4>
+                        <p>Regional & Specialized Banks</p>
+                    </div>
+                    <div class="tier-arrow">↓</div>
+                    <div class="tier tier-3" data-tier="3">
+                        <h4>Tier 3: Retail Brokers</h4>
+                        <p>Liquidity Aggregation</p>
+                    </div>
+                    <div class="tier-arrow">↓</div>
+                    <div class="tier tier-4" data-tier="4">
+                        <h4>Tier 4: Retail Traders</h4>
+                        <p>Individual Investors</p>
+                    </div>
+                </div>
+                <div class="visual-info">
+                    <h4 id="tier-title">Market Structure</h4>
+                    <p id="tier-description">Click on each tier to learn about its role in the market ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Broker Comparison Tool -->
+    <section class="broker-comparison">
+        <div class="container">
+            <h2>Broker Comparison Tool</h2>
+            <div class="comparison-tool">
+                <div class="comparison-filters">
+                    <select id="region-filter">
+                        <option value="all">All Regions</option>
+                        <option value="us">United States</option>
+                        <option value="eu">European Union</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="au">Australia</option>
+                    </select>
+                    <select id="account-type-filter">
+                        <option value="all">All Account Types</option>
+                        <option value="retail">Retail</option>
+                        <option value="professional">Professional</option>
+                        <option value="institutional">Institutional</option>
+                    </select>
+                    <button id="compare-brokers">Compare Brokers</button>
+                </div>
+                <div class="comparison-results">
+                    <table id="broker-table">
+                        <thead>
+                            <tr>
+                                <th>Broker</th>
+                                <th>Regulation</th>
+                                <th>Min Deposit</th>
+                                <th>Spreads</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Results populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Navigation -->
+    <section class="chapter-navigation">
+        <div class="container">
+            <div class="nav-buttons">
+                <a href="chapter1-toc.html" class="nav-button prev">
+                    <span>← Previous Chapter</span>
+                    <strong>Foundations of Financial Markets</strong>
+                </a>
+                <a href="chapter3-toc.html" class="nav-button next">
+                    <span>Next Chapter →</span>
+                    <strong>Technical Analysis & Charting</strong>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as main site) -->
+    <footer class="footer">
+        <!-- Footer content from index.html -->
+    </footer>
+
+    <script src="chapter2-script.js"></script>
+</body>
+</html>
