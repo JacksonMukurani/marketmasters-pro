@@ -1,11 +1,12 @@
-// Mobile Menu Toggle - FIXED
+// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobileMenu');
     const navLinks = document.getElementById('navLinks');
     
     // Mobile menu toggle
     if (mobileMenu && navLinks) {
-        mobileMenu.addEventListener('click', function() {
+        mobileMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
             navLinks.classList.toggle('mobile-visible');
         });
         
