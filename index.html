@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MarketMasters Pro - Master Financial Markets</title>
+    <title>YOUR ARTICLE TITLE | MarketMasters Pro</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
             <div class="nav-brand">
-                <h1>MarketMasters Pro</h1>
+                <h1><a href="index.html">MarketMasters Pro</a></h1>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#tools">Tools</a></li>
-                <li><a href="#about">About</a></li>
-                <button class="cta-button" onclick="location.href='#articles'">Get Started</button>
+                <li><a href="index.html#articles">Articles</a></li>
+                <li><a href="index.html#tools">Tools</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <button class="cta-button" onclick="location.href='index.html#articles'">All Articles</button>
             </ul>
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
@@ -26,46 +26,36 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Master Financial Markets</h1>
-            <p>Professional trading education for serious market participants</p>
-            <button class="btn-primary" onclick="location.href='#articles'">Start Learning</button>
-        </div>
-    </section>
-
-    <section id="articles" class="articles-section">
+    <article class="article-content">
         <div class="container">
-            <h2>Trading Articles</h2>
-            <div class="articles-grid" id="articlesGrid">
-                <!-- Articles will be added here automatically -->
-            </div>
-        </div>
-    </section>
-
-    <section id="tools" class="tools-section">
-        <div class="container">
-            <h2>Trading Tools</h2>
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <h3>Position Calculator</h3>
-                    <p>Calculate proper position sizing</p>
-                    <button onclick="openCalculator()">Open Tool</button>
+            <div class="article-header">
+                <h1>YOUR ARTICLE TITLE HERE</h1>
+                <p class="article-subtitle">Your article subtitle or brief description goes here</p>
+                <div class="article-meta">
+                    <span class="read-time">X min read</span>
+                    <span class="difficulty">Difficulty Level</span>
                 </div>
-                <div class="tool-card">
-                    <h3>Market Hours</h3>
-                    <p>Global session times</p>
-                    <button onclick="openMarketHours()">Open Tool</button>
+            </div>
+
+            <div class="article-body">
+                <!-- === YOUR CONTENT STARTS HERE === -->
+                
+                <p>Your complete article content goes here. Write as much as you want.</p>
+                
+                <h2>Section Heading</h2>
+                <p>More content...</p>
+                
+                <h2>Another Section</h2>
+                <p>Even more content...</p>
+                
+                <!-- === YOUR CONTENT ENDS HERE === -->
+                
+                <div class="article-footer">
+                    <a href="index.html" class="btn-primary">← Back to All Articles</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 MarketMasters Pro</p>
-        </div>
-    </footer>
+    </article>
 
     <script src="script.js"></script>
 </body>
