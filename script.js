@@ -3,10 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.querySelector('.mobile-menu');
     const navLinks = document.querySelector('.nav-links');
     
-    mobileMenu.addEventListener('click', function() {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        mobileMenu.classList.toggle('active');
-    });
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener('click', function() {
+            const isDisplayed = navLinks.style.display === 'flex';
+            navLinks.style.display = isDisplayed ? 'none' : 'flex';
+            mobileMenu.classList.toggle('active');
+        });
+    }
 
     // Accordion Functionality
     const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -20,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.accordion-item').forEach(item => {
                 if (item !== accordionItem) {
                     item.classList.remove('active');
-                    item.querySelector('.accordion-content').style.maxHeight = '0';
+                    if (item.querySelector('.accordion-content')) {
+                        item.querySelector('.accordion-content').style.maxHeight = '0';
+                    }
                 }
             });
             
@@ -49,11 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             const userTime = new Date().toLocaleString();
-            timeResult.innerHTML = `
-                <strong>${sessionTimes[selectedSession]}</strong><br>
-                Your local time: ${userTime}<br>
-                <small>Use our advanced converter for precise calculations</small>
-            `;
+            if (timeResult) {
+                timeResult.innerHTML = `
+                    <strong>${sessionTimes[selectedSession]}</strong><br>
+                    Your local time: ${userTime}<br>
+                    <small>Use our advanced converter for precise calculations</small>
+                `;
+            }
         });
     }
 
@@ -66,18 +73,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const positionResult = document.getElementById('position-result');
             
             if (!accountEquity || !riskPercent) {
-                positionResult.innerHTML = '<span style="color: var(--danger)">Please enter both values</span>';
+                if (positionResult) {
+                    positionResult.innerHTML = '<span style="color: var(--danger)">Please enter both values</span>';
+                }
                 return;
             }
             
             const riskAmount = accountEquity * (riskPercent / 100);
             const recommendedPosition = riskAmount * 10; // Simplified calculation
             
-            positionResult.innerHTML = `
-                <strong>Recommended Position Size:</strong><br>
-                $${recommendedPosition.toFixed(2)}<br>
-                <small>Risking $${riskAmount.toFixed(2)} (${riskPercent}% of equity)</small>
-            `;
+            if (positionResult) {
+                positionResult.innerHTML = `
+                    <strong>Recommended Position Size:</strong><br>
+                    $${recommendedPosition.toFixed(2)}<br>
+                    <small>Risking $${riskAmount.toFixed(2)} (${riskPercent}% of equity)</small>
+                `;
+            }
         });
     }
 
@@ -93,11 +104,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         const readMoreBtn = card.querySelector('.read-more');
-        readMoreBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const articleId = card.getAttribute('data-article');
-            alert(`Loading full article: ${card.querySelector('h3').textContent}`);
-        });
+        if (readMoreBtn) {
+            readMoreBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const articleId = card.getAttribute('data-article');
+                alert(`Loading full article: ${card.querySelector('h3').textContent}`);
+            });
+        }
     });
 
     // Smooth scrolling for navigation links
@@ -117,12 +130,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Header scroll effect
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.header');
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(45, 45, 45, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.background = 'var(--dark-gray)';
-            header.style.backdropFilter = 'none';
+        if (header) {
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(45, 45, 45, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--dark-gray)';
+                header.style.backdropFilter = 'none';
+            }
         }
     });
 });
@@ -156,3 +171,13 @@ class AdManager {
 window.addEventListener('load', () => {
     new AdManager();
 });
+
+// Article loading function
+function loadArticle(articleUrl) {
+    // In a real implementation, this would load the article content
+    // For demo purposes, we'll show an alert
+    alert(`Loading article: ${articleUrl}\n\nIn the full implementation, this would navigate to the complete article page with detailed content, interactive examples, and practice exercises.`);
+    
+    // Alternatively, you could use:
+    // window.location.href = articleUrl;
+}
