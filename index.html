@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketMasters Pro - Master Financial Markets</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>MarketMasters Pro</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#about">About</a></li>
+                <button class="cta-button">Get Started</button>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Master Financial Markets</h1>
+            <p>Transform complex market concepts into actionable knowledge. Professional-grade education for serious traders.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Start Learning</button>
+                <button class="btn-secondary">View Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Placement - Leaderboard -->
+    <div class="ad-container leaderboard-ad">
+        <div class="ad-label">Advertisement</div>
+        <!-- Ad content would go here -->
+        <div class="ad-placeholder">Leaderboard Ad (970x250)</div>
+    </div>
+
+    <!-- Articles Grid -->
+    <section id="articles" class="articles-section">
+        <div class="container">
+            <h2>Foundations of Financial Markets</h2>
+            <p class="section-subtitle">Chapter 1: Essential market knowledge for professional traders</p>
+            
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <article class="article-card" data-article="1">
+                    <div class="article-badge">Essential</div>
+                    <h3>What Are Financial Markets?</h3>
+                    <p>Understanding the fundamental systems where assets are traded and how they've evolved from ancient civilizations to modern digital platforms.</p>
+                    <div class="article-meta">
+                        <span class="read-time">8 min read</span>
+                        <span class="difficulty">Beginner</span>
+                    </div>
+                    <button class="read-more">Read Article</button>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card" data-article="2">
+                    <h3>Why Markets Exist: Core Functions</h3>
+                    <p>Explore the three primary purposes of financial markets: capital flow, risk transfer, and speculation.</p>
+                    <div class="article-meta">
+                        <span class="read-time">6 min read</span>
+                        <span class="difficulty">Beginner</span>
+                    </div>
+                    <button class="read-more">Read Article</button>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card" data-article="3">
+                    <h3>Market Types & Trading Mechanics</h3>
+                    <p>Comprehensive guide to equity, bond, forex, commodities, and cryptocurrency markets with their unique symbols and conventions.</p>
+                    <div class="article-meta">
+                        <span class="read-time">12 min read</span>
+                        <span class="difficulty">Intermediate</span>
+                    </div>
+                    <button class="read-more">Read Article</button>
+                </article>
+
+                <!-- Ad Placement - Medium Rectangle -->
+                <div class="ad-container rectangle-ad">
+                    <div class="ad-label">Sponsored</div>
+                    <div class="ad-placeholder">Medium Rectangle (300x250)</div>
+                </div>
+
+                <!-- Article 4 -->
+                <article class="article-card" data-article="4">
+                    <h3>Key Market Differences</h3>
+                    <p>Liquidity, volume, volatility, and trading hours compared across different market types.</p>
+                    <div class="article-meta">
+                        <span class="read-time">7 min read</span>
+                        <span class="difficulty">Intermediate</span>
+                    </div>
+                    <button class="read-more">Read Article</button>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="article-card" data-article="5">
+                    <h3>Global Market Sessions</h3>
+                    <p>How Tokyo, London, and New York sessions create 24-hour trading opportunities and volatility patterns.</p>
+                    <div class="article-meta">
+                        <span class="read-time">5 min read</span>
+                        <span class="difficulty">Beginner</span>
+                    </div>
+                    <button class="read-more">Read Article</button>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="article-card" data-article="6">
+                    <div class="article-badge">Advanced</div>
+                    <h3>Market Participants</h3>
+                    <p>From retail traders to central banks - understanding who moves markets and how they influence price action.</p>
+                    <div class="article-meta">
+                        <span class="read-time">10 min read</span>
+                        <span class="difficulty">Advanced</span>
+                    </div>
+                    <button class="read-more">Read Article</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <h2>Interactive Learning Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>Market Time Converter</h4>
+                    <p>Convert trading sessions to your local time zone</p>
+                    <div class="converter-tool">
+                        <select id="session-select">
+                            <option value="tokyo">Tokyo Session (00:00)</option>
+                            <option value="london">London Session (08:00)</option>
+                            <option value="newyork">New York Session (14:30)</option>
+                        </select>
+                        <button id="convert-time">Convert to My Time</button>
+                        <div id="time-result" class="time-result"></div>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <h4>Position Size Calculator</h4>
+                    <p>Calculate proper position sizing based on your account equity and risk tolerance</p>
+                    <div class="calculator-tool">
+                        <input type="number" id="account-equity" placeholder="Account Equity ($)">
+                        <input type="number" id="risk-percent" placeholder="Risk % (1-2%)" min="0.1" max="5" step="0.1">
+                        <button id="calculate-position">Calculate</button>
+                        <div id="position-result" class="position-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Placement - Wide Skyscraper -->
+    <div class="ad-container skyscraper-ad">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder">Wide Skyscraper (160x600)</div>
+    </div>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        What's the difference between investing and trading?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Investing typically involves longer-term positions based on fundamental value, while trading focuses on shorter-term price movements using technical analysis and market psychology.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How much money do I need to start trading?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>You can start with a demo account using virtual money. For live trading, many brokers offer accounts with minimum deposits as low as $100, but proper risk management is crucial regardless of account size.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Which markets are best for beginners?
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Forex and major stock indices often have good liquidity and educational resources. Start with demo accounts and focus on understanding one market thoroughly before expanding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MarketMasters Pro</h3>
+                    <p>Professional financial education for serious market participants.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#articles">All Articles</a></li>
+                        <li><a href="#courses">Trading Courses</a></li>
+                        <li><a href="#tools">Market Tools</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#disclaimer">Risk Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MarketMasters Pro. All rights reserved. Trading involves substantial risk of loss.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
