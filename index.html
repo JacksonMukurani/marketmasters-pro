@@ -14,14 +14,16 @@
             <div class="nav-brand">
                 <h1>MarketMasters Pro</h1>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#articles">Articles</a></li>
-                <li><a href="#courses">Courses</a></li>
+                <li><a href="chapter1-toc.html">Chapter 1</a></li>
+                <li><a href="chapter2-toc.html">Chapter 2</a></li>
+                <li><a href="chapter3-toc.html">Chapter 3</a></li>
                 <li><a href="#tools">Tools</a></li>
                 <li><a href="#about">About</a></li>
                 <button class="cta-button">Get Started</button>
             </ul>
-            <div class="mobile-menu">
+            <div class="mobile-menu" id="mobileMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -33,110 +35,134 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Master Financial Markets</h1>
-            <p>Transform complex market concepts into actionable knowledge. Professional-grade education for serious traders.</p>
+            <p>Professional-grade education transforming complex market concepts into actionable knowledge for serious traders.</p>
             <div class="hero-buttons">
-                <button class="btn-primary">Start Learning</button>
-                <button class="btn-secondary">View Articles</button>
+                <button class="btn-primary" onclick="location.href='#chapters'">Start Learning</button>
+                <button class="btn-secondary" onclick="location.href='#articles'">Browse Articles</button>
             </div>
         </div>
     </section>
 
-    <!-- Ad Placement - Leaderboard -->
+    <!-- Ad Placement -->
     <div class="ad-container leaderboard-ad">
         <div class="ad-label">Advertisement</div>
-        <!-- Ad content would go here -->
-        <div class="ad-placeholder">Leaderboard Ad (970x250)</div>
+        <div class="ad-placeholder">Professional Trading Platform</div>
     </div>
 
-    <!-- Articles Grid -->
+    <!-- Chapters Overview -->
+    <section id="chapters" class="chapters-section">
+        <div class="container">
+            <h2>Complete Trading Education</h2>
+            <p class="section-subtitle">Structured learning path from market fundamentals to advanced trading strategies</p>
+            
+            <div class="chapters-grid">
+                <!-- Chapter 1 -->
+                <div class="chapter-card">
+                    <div class="chapter-number">01</div>
+                    <h3>Foundations of Financial Markets</h3>
+                    <p>Understand what markets are, why they exist, and how they function. Essential groundwork for all traders.</p>
+                    <ul class="chapter-topics">
+                        <li>Market Types & Participants</li>
+                        <li>Price Movement Drivers</li>
+                        <li>Trading Account Fundamentals</li>
+                        <li>Broker Selection</li>
+                    </ul>
+                    <a href="chapter1-toc.html" class="chapter-link">Explore Chapter 1 →</a>
+                </div>
+
+                <!-- Chapter 2 -->
+                <div class="chapter-card">
+                    <div class="chapter-number">02</div>
+                    <h3>Market Instruments & Structure</h3>
+                    <p>Deep dive into trading instruments, market structures, and execution models across different asset classes.</p>
+                    <ul class="chapter-topics">
+                        <li>Forex Market Branches</li>
+                        <li>Stocks vs Bonds</li>
+                        <li>Commodities & Crypto</li>
+                        <li>Broker Types & Regulation</li>
+                    </ul>
+                    <a href="chapter2-toc.html" class="chapter-link">Explore Chapter 2 →</a>
+                </div>
+
+                <!-- Chapter 3 -->
+                <div class="chapter-card">
+                    <div class="chapter-number">03</div>
+                    <h3>Charting & Technical Tools</h3>
+                    <p>Master chart analysis, technical indicators, and visualization platforms for effective market analysis.</p>
+                    <ul class="chapter-topics">
+                        <li>Chart Types & Timeframes</li>
+                        <li>Technical Indicators</li>
+                        <li>Volume Analysis</li>
+                        <li>Multi-Timeframe Analysis</li>
+                    </ul>
+                    <a href="chapter3-toc.html" class="chapter-link">Explore Chapter 3 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles -->
     <section id="articles" class="articles-section">
         <div class="container">
-            <h2>Foundations of Financial Markets</h2>
-            <p class="section-subtitle">Chapter 1: Essential market knowledge for professional traders</p>
+            <h2>Featured Articles</h2>
+            <p class="section-subtitle">Essential reading for developing traders</p>
             
             <div class="articles-grid">
-                <!-- Article 1 -->
-                <article class="article-card" data-article="1">
-                    <div class="article-badge">Essential</div>
+                <!-- Article from Chapter 1 -->
+                <article class="article-card">
+                    <div class="article-badge">Foundation</div>
                     <h3>What Are Financial Markets?</h3>
-                    <p>Understanding the fundamental systems where assets are traded and how they've evolved from ancient civilizations to modern digital platforms.</p>
+                    <p>Understanding the fundamental systems where assets are traded and how they've evolved from ancient civilizations to modern platforms.</p>
                     <div class="article-meta">
                         <span class="read-time">8 min read</span>
                         <span class="difficulty">Beginner</span>
                     </div>
-                    <button class="read-more">Read Article</button>
+                    <button class="read-more" onclick="location.href='articles/1.1-financial-markets.html'">Read Article</button>
                 </article>
 
-                <!-- Article 2 -->
-                <article class="article-card" data-article="2">
-                    <h3>Why Markets Exist: Core Functions</h3>
-                    <p>Explore the three primary purposes of financial markets: capital flow, risk transfer, and speculation.</p>
+                <!-- Article from Chapter 2 -->
+                <article class="article-card">
+                    <div class="article-badge">Instrument</div>
+                    <h3>Forex Market Branches</h3>
+                    <p>Spot, Forward, Futures, Options, and Swaps - understand each instrument's unique characteristics and use cases.</p>
                     <div class="article-meta">
-                        <span class="read-time">6 min read</span>
-                        <span class="difficulty">Beginner</span>
+                        <span class="read-time">10 min read</span>
+                        <span class="difficulty">Intermediate</span>
                     </div>
-                    <button class="read-more">Read Article</button>
+                    <button class="read-more" onclick="location.href='articles/2.1-forex-branches.html'">Read Article</button>
                 </article>
 
-                <!-- Article 3 -->
-                <article class="article-card" data-article="3">
-                    <h3>Market Types & Trading Mechanics</h3>
-                    <p>Comprehensive guide to equity, bond, forex, commodities, and cryptocurrency markets with their unique symbols and conventions.</p>
+                <!-- Article from Chapter 3 -->
+                <article class="article-card">
+                    <div class="article-badge">Technical</div>
+                    <h3>Chart Types & Analysis</h3>
+                    <p>Master candlestick, bar, line charts and learn which chart types work best for different trading styles.</p>
                     <div class="article-meta">
                         <span class="read-time">12 min read</span>
                         <span class="difficulty">Intermediate</span>
                     </div>
-                    <button class="read-more">Read Article</button>
-                </article>
-
-                <!-- Ad Placement - Medium Rectangle -->
-                <div class="ad-container rectangle-ad">
-                    <div class="ad-label">Sponsored</div>
-                    <div class="ad-placeholder">Medium Rectangle (300x250)</div>
-                </div>
-
-                <!-- Article 4 -->
-                <article class="article-card" data-article="4">
-                    <h3>Key Market Differences</h3>
-                    <p>Liquidity, volume, volatility, and trading hours compared across different market types.</p>
-                    <div class="article-meta">
-                        <span class="read-time">7 min read</span>
-                        <span class="difficulty">Intermediate</span>
-                    </div>
-                    <button class="read-more">Read Article</button>
-                </article>
-
-                <!-- Article 5 -->
-                <article class="article-card" data-article="5">
-                    <h3>Global Market Sessions</h3>
-                    <p>How Tokyo, London, and New York sessions create 24-hour trading opportunities and volatility patterns.</p>
-                    <div class="article-meta">
-                        <span class="read-time">5 min read</span>
-                        <span class="difficulty">Beginner</span>
-                    </div>
-                    <button class="read-more">Read Article</button>
-                </article>
-
-                <!-- Article 6 -->
-                <article class="article-card" data-article="6">
-                    <div class="article-badge">Advanced</div>
-                    <h3>Market Participants</h3>
-                    <p>From retail traders to central banks - understanding who moves markets and how they influence price action.</p>
-                    <div class="article-meta">
-                        <span class="read-time">10 min read</span>
-                        <span class="difficulty">Advanced</span>
-                    </div>
-                    <button class="read-more">Read Article</button>
+                    <button class="read-more" onclick="location.href='articles/3.3-chart-types.html'">Read Article</button>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Tools Section -->
-    <section class="tools-section">
+    <!-- Interactive Tools -->
+    <section id="tools" class="tools-section">
         <div class="container">
-            <h2>Interactive Learning Tools</h2>
+            <h2>Trading Tools & Calculators</h2>
             <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>Position Size Calculator</h4>
+                    <p>Calculate proper position sizing based on your account equity and risk tolerance</p>
+                    <div class="calculator-tool">
+                        <input type="number" id="account-equity" placeholder="Account Equity ($)" value="10000">
+                        <input type="number" id="risk-percent" placeholder="Risk %" value="1" min="0.1" max="5" step="0.1">
+                        <button id="calculate-position">Calculate</button>
+                        <div id="position-result" class="position-result"></div>
+                    </div>
+                </div>
+                
                 <div class="tool-card">
                     <h4>Market Time Converter</h4>
                     <p>Convert trading sessions to your local time zone</p>
@@ -150,59 +176,46 @@
                         <div id="time-result" class="time-result"></div>
                     </div>
                 </div>
-                
+
                 <div class="tool-card">
-                    <h4>Position Size Calculator</h4>
-                    <p>Calculate proper position sizing based on your account equity and risk tolerance</p>
+                    <h4>Pip Value Calculator</h4>
+                    <p>Calculate pip values for different currency pairs and lot sizes</p>
                     <div class="calculator-tool">
-                        <input type="number" id="account-equity" placeholder="Account Equity ($)">
-                        <input type="number" id="risk-percent" placeholder="Risk % (1-2%)" min="0.1" max="5" step="0.1">
-                        <button id="calculate-position">Calculate</button>
-                        <div id="position-result" class="position-result"></div>
+                        <select id="currency-pair">
+                            <option value="EUR/USD">EUR/USD</option>
+                            <option value="GBP/USD">GBP/USD</option>
+                            <option value="USD/JPY">USD/JPY</option>
+                            <option value="AUD/USD">AUD/USD</option>
+                        </select>
+                        <input type="number" id="lot-size" placeholder="Lot Size" value="1">
+                        <button id="calculate-pip">Calculate</button>
+                        <div id="pip-result" class="pip-result"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ad Placement - Wide Skyscraper -->
-    <div class="ad-container skyscraper-ad">
-        <div class="ad-label">Advertisement</div>
-        <div class="ad-placeholder">Wide Skyscraper (160x600)</div>
-    </div>
-
-    <!-- FAQ Accordion Section -->
-    <section class="faq-section">
+    <!-- About Section -->
+    <section id="about" class="about-section">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        What's the difference between investing and trading?
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Investing typically involves longer-term positions based on fundamental value, while trading focuses on shorter-term price movements using technical analysis and market psychology.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        How much money do I need to start trading?
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>You can start with a demo account using virtual money. For live trading, many brokers offer accounts with minimum deposits as low as $100, but proper risk management is crucial regardless of account size.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <button class="accordion-header">
-                        Which markets are best for beginners?
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p>Forex and major stock indices often have good liquidity and educational resources. Start with demo accounts and focus on understanding one market thoroughly before expanding.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About MarketMasters Pro</h2>
+                    <p>Professional financial education designed for serious market participants. We transform complex trading concepts into actionable knowledge through structured learning paths and practical tools.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <h4>Structured Learning</h4>
+                            <p>Progress from fundamentals to advanced strategies with our comprehensive chapter system.</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Practical Tools</h4>
+                            <p>Interactive calculators and analysis tools to apply concepts in real market conditions.</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Professional Grade</h4>
+                            <p>Content developed for serious traders seeking institutional-quality education.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -218,12 +231,19 @@
                     <p>Professional financial education for serious market participants.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Chapters</h4>
                     <ul>
-                        <li><a href="#articles">All Articles</a></li>
-                        <li><a href="#courses">Trading Courses</a></li>
-                        <li><a href="#tools">Market Tools</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="chapter1-toc.html">Chapter 1: Foundations</a></li>
+                        <li><a href="chapter2-toc.html">Chapter 2: Instruments</a></li>
+                        <li><a href="chapter3-toc.html">Chapter 3: Charting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#tools">Trading Tools</a></li>
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -236,7 +256,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 MarketMasters Pro. All rights reserved. Trading involves substantial risk of loss.</p>
+                <p>&copy; 2024 MarketMasters Pro. All rights reserved. Trading involves substantial risk of loss.</p>
             </div>
         </div>
     </footer>
