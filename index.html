@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forex Market Branches | MarketMasters Pro</title>
+    <title>MarketMasters Pro - Master Financial Markets</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
             <div class="nav-brand">
-                <h1><a href="index.html">MarketMasters Pro</a></h1>
+                <h1>MarketMasters Pro</h1>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html#articles">Articles</a></li>
-                <li><a href="index.html#chapters">Chapters</a></li>
-                <li><a href="index.html#tools">Tools</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <button class="cta-button" onclick="location.href='index.html#chapters'">Get Started</button>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#about">About</a></li>
+                <button class="cta-button" onclick="location.href='#articles'">Get Started</button>
             </ul>
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
@@ -27,34 +26,46 @@
         </nav>
     </header>
 
-    <article class="article-content">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Master Financial Markets</h1>
+            <p>Professional trading education for serious market participants</p>
+            <button class="btn-primary" onclick="location.href='#articles'">Start Learning</button>
+        </div>
+    </section>
+
+    <section id="articles" class="articles-section">
         <div class="container">
-            <div class="article-header">
-                <h1>Forex Market Branches</h1>
-                <p class="article-subtitle">Spot, Forward, Futures, Options, and Swaps - understanding each instrument's unique characteristics and use cases.</p>
+            <h2>Trading Articles</h2>
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Articles will be added here automatically -->
             </div>
+        </div>
+    </section>
 
-            <div class="article-body">
-                <h2>Spot Forex Market</h2>
-                <p>This is the most familiar branch for retail traders, where currencies are traded for immediate delivery at the current market price. When you buy EUR/USD in a spot transaction, you're essentially exchanging one currency for another at the prevailing exchange rate.</p>
-                
-                <h2>Forward Contracts</h2>
-                <p>These are customized agreements between two parties to exchange currencies at a predetermined price on a specific future date. Unlike spot transactions, forwards are traded over-the-counter (OTC) and are not standardized.</p>
-
-                <h2>Futures Contracts</h2>
-                <p>Similar to forwards but standardized and traded on regulated exchanges like the Chicago Mercantile Exchange (CME). Currency futures have fixed contract sizes, expiration dates, and centralized clearing.</p>
-
-                <h2>Options Contracts</h2>
-                <p>These provide the right, but not the obligation, to buy (call option) or sell (put option) a currency pair at a specific price (strike price) on or before a certain date.</p>
-
-                <div class="action-box">
-                    <a href="1.1-financial-markets.html" class="btn-secondary">← Previous Article</a>
-                    <a href="index.html" class="btn-primary">Back to Home</a>
-                    <a href="3.3-chart-types.html" class="btn-secondary">Next Article →</a>
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <h2>Trading Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Position Calculator</h3>
+                    <p>Calculate proper position sizing</p>
+                    <button onclick="openCalculator()">Open Tool</button>
+                </div>
+                <div class="tool-card">
+                    <h3>Market Hours</h3>
+                    <p>Global session times</p>
+                    <button onclick="openMarketHours()">Open Tool</button>
                 </div>
             </div>
         </div>
-    </article>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MarketMasters Pro</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
