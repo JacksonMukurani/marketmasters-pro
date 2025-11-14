@@ -582,3 +582,329 @@ select:focus, input:focus {
         padding: 1.5rem;
     }
 }
+/* Chapter 2 Specific Styles */
+.chapter-hero {
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.chapter-header {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chapter-badge {
+    background: var(--primary-orange);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.chapter-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-orange), var(--orange-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.epigraph {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.learning-objectives {
+    background: var(--dark-gray);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-orange);
+    text-align: left;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+    background: var(--dark-gray);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.progress-bar {
+    background: var(--medium-gray);
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    background: var(--primary-orange);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Interactive Visual */
+.interactive-visual {
+    padding: 80px 0;
+    background: var(--black);
+}
+
+.visual-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.market-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tier {
+    background: var(--dark-gray);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tier:hover {
+    border-color: var(--primary-orange);
+    transform: translateX(10px);
+}
+
+.tier.active {
+    border-color: var(--primary-orange);
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+}
+
+.tier h4 {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.tier p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.tier-arrow {
+    text-align: center;
+    color: var(--primary-orange);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.visual-info {
+    background: var(--dark-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--medium-gray);
+    position: sticky;
+    top: 100px;
+}
+
+.visual-info h4 {
+    color: var(--primary-orange);
+    margin-bottom: 1rem;
+}
+
+/* Broker Comparison */
+.broker-comparison {
+    padding: 80px 0;
+    background: var(--dark-gray);
+}
+
+.comparison-tool {
+    background: var(--black);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--medium-gray);
+}
+
+.comparison-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.comparison-filters select {
+    flex: 1;
+    min-width: 200px;
+}
+
+#broker-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--dark-gray);
+}
+
+#broker-table th {
+    background: var(--primary-orange);
+    color: var(--white);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+#broker-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--medium-gray);
+    color: var(--text-light);
+}
+
+#broker-table tr:hover {
+    background: var(--black);
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    padding: 60px 0;
+    background: var(--black);
+}
+
+.nav-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.nav-button {
+    background: var(--dark-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-light);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.nav-button:hover {
+    border-color: var(--primary-orange);
+    transform: translateY(-2px);
+}
+
+.nav-button span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.nav-button strong {
+    color: var(--primary-orange);
+    font-size: 1.1rem;
+}
+
+/* Instrument Comparison Cards */
+.instrument-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.instrument-card {
+    background: var(--dark-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--medium-gray);
+    transition: all 0.3s ease;
+}
+
+.instrument-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-orange);
+}
+
+.instrument-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-orange);
+}
+
+.instrument-card h4 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.instrument-features {
+    list-style: none;
+}
+
+.instrument-features li {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.instrument-features li:before {
+    content: "•";
+    color: var(--primary-orange);
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Design for Chapter 2 */
+@media (max-width: 768px) {
+    .chapter-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .visual-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .comparison-filters {
+        flex-direction: column;
+    }
+    
+    .comparison-filters select {
+        min-width: auto;
+    }
+    
+    #broker-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .chapter-hero {
+        padding: 100px 0 40px;
+    }
+    
+    .chapter-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .tier {
+        padding: 1rem;
+    }
+}
